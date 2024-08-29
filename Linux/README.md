@@ -26,6 +26,20 @@
 
 ### Конспекты:
 
+[Установка пакетов, репозитории. Планировщик Cron](https://cloud.mail.ru/public/tqvB/WUYANBkPg)
+
+[Права доступа и пользователи.](https://cloud.mail.ru/public/zMsN/hDSa35L5k)
+
+[Сетевые возможности Linux](https://cloud.mail.ru/public/oVn4/MRLhsZE4F)
+
+[Настройка сети в Linux. Работа с IPtables.](container7.md)
+
+[Веб-сервер на Linux](https://cloud.mail.ru/public/Jpq9/2sNRk9L2B)
+
+[ДЗ: Запуск стека для веб-приложения.](https://cloud.mail.ru/public/eLLh/nDZH4wvez)
+
+[Основы Docker](https://cloud.mail.ru/public/5dcH/vPasfrQpW)
+
 [Установка samba](samba_install.md)
 
 [Установка java, IntellijIdea](./java_intellijIdea_install.md)
