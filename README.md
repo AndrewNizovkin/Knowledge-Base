@@ -1,31 +1,31 @@
 # Knowledge-Base
 
-[Афоризмы](aforism.md)
+[Афоризмы](./sources/aforism.md)
 
-[ООП](./OOP/README.md)
+[ООП](./sources/OOP/README.md)
 
-[Базы данных](./DataBases/README.md)
+[Базы данных](./sources/DataBases/README.md)
 
-[Git](./Git/README.md)
+[Git](./sources/Git/README.md)
 
-[Java](./Java/README.md)
+[Java](./sources/Java/README.md)
 
-[Python](./Python/README.md)
+[Python](./sources/Python/README.md)
 
-[Тестирование](./Testing/README.md)
+[Тестирование](./sources/Testing/README.md)
 
-[Spring](./Spring/README.md)
+[Spring](./sources/Spring/README.md)
 
-[Linux](./Linux/README.md)
+[Linux](./sources/Linux/README.md)
 
-[Networks](./Networks/README.md)
+[Networks](./sources/Networks/README.md)
 
-[Software architecture](./Software_Architecture/README.md)
+[Software architecture](./sources/Software_Architecture/README.md)
 
-[Web разработка](./WebDev/README.md)
+[Web разработка](./sources/WebDev/README.md)
 
-[Android](./Android/README.md)
+[Android](./sources/Android/README.md)
 
-[CI/CD](./CI-CD/README.md)
+[CI/CD](./sources/CI-CD/README.md)
 
-[Методологии](./Methodologies/README.md)
+[Методологии](./sources/Methodologies/README.md)
