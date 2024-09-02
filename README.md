@@ -25,3 +25,7 @@
 [Web разработка](./WebDev/README.md)
 
 [Android](./Android/README.md)
+
+[CI/CD](./CI-CD/README.md)
+
+[Методологии](./Methodologies/README.md)
