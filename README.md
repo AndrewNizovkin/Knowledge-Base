@@ -38,4 +38,6 @@
 
 [Методологии](./sources/Methodologies/README.md)
 
+[Управление продуктом](./sources/ProductManagement/README.md)
+
 [Фриланс](./sources/Freelance/README.md)
