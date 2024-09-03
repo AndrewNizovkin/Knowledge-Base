@@ -2,6 +2,14 @@
 
 [Афоризмы](./sources/aforism.md)
 
+[Алгоритмы](./sources/Algoritms/README.md)
+
+[Математика](./sources/Mathematics/README.md)
+
+[Информатика](./sources/Informatics/README.md)
+
+[Нейронауки и обучение](./sources/Neuroscience/README.md)
+
 [ООП](./sources/OOP/README.md)
 
 [Базы данных](./sources/DataBases/README.md)
@@ -29,3 +37,5 @@
 [CI/CD](./sources/CI-CD/README.md)
 
 [Методологии](./sources/Methodologies/README.md)
+
+[Фриланс](./sources/Freelance/README.md)

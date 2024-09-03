@@ -11,3 +11,5 @@
 [Kanban](https://cloud.mail.ru/public/ncDR/PjSUXYxoQ) 
 
 [Как выбрать гибкую методологию и не ошибиться](https://cloud.mail.ru/public/Dabg/HRNUkRUSw) 
+
+[Буткемп Проджест-менеджер](https://cloud.mail.ru/public/uWLp/BYPTdDWpd)
