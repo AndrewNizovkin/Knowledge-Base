@@ -63,6 +63,12 @@ https://gbcdn.mrgcdn.ru/uploads/record/314550/attachment/45966c48683d06435d531eb
 
 https://gbcdn.mrgcdn.ru/uploads/record/315379/attachment/27f7d6dd716dac0a085812e0b8bef761.mp4
 
+---
+
+## Статьи, видео.
+
+[Как развернуть сайт на VDS](https://habr.com/ru/articles/836980/)
+
 [Спринг потрошитель ч1](https://www.youtube.com/watch?v=BmBr5diz8WA)
 
 [Конспект Spring-потрошитель, часть 1.](https://www.notion.so/Spring-1-2b9ddd58aca640dcb742786a5040a5c0?pvs=21)

@@ -69,7 +69,9 @@ Request
 
 создается для каждого HTTP-запроса. 
 
-Session создается для каждого HTTP-сеанса. 
+Session 
+
+создается для каждого HTTP-сеанса. 
 
 Application 
 
@@ -97,13 +99,18 @@ public class PrototypeBean {
 
 Spring Framework имеет две основные реализации контейнера:
 
-BeanFactory
+### BeanFactory
 
 Это базовый контейнер, который предоставляет функциональность IoC. Он определяет основной контракт, который должны выполнять все контейнеры. BeanFactory использует конфигурацию (XML или Java-based) для создания и управления объектами и их зависимостями. Однако он не предоставляет дополнительных возможностей, таких как интеграция с другими компонентами Spring, поддержка аннотаций и т. д.
 
-ApplicationContext
+BeanFactory в основном действует как пул объектов, где создание и удаление объектов управляется посредством конфигурации. Самая популярная и полезная реализация BeanFactory — это org.springframework.context.support.ClassPathXmlApplicationContext. ClassPathXmlApplicationContext использует метаданные конфигурации XML для создания полностью настроенного приложения.
 
-Это расширение BeanFactory, которое предоставляет дополнительные возможности, такие как интеграция с другими компонентами Spring (например, AOP, Web), поддержка аннотаций и др. ApplicationContext является предпочтительным контейнером для большинства приложений, поскольку он предоставляет более широкий набор функций.
+### ApplicationContext
+
+Это расширение BeanFactory, которое предоставляет дополнительные возможности, такие как интеграция с другими компонентами Spring (например, AOP, Web), поддержка аннотаций и др. ApplicationContext является предпочтительным контейнером для большинства приложений, поскольку он предоставляет более широкий набор функций. Он также имеет возможность публиковать события для зарегистрированных слушателей.
+
+Для создания экземпляров bean-компонента нам сначала нужно создать экземпляр контейнера Spring IoC, прочитав метаданные конфигурации. После инициализации контейнера IoC мы можем получить экземпляры компонента, используя имя или идентификатор компонента.
+
 
 В Spring Boot есть два основных способа конфигурации: через файлы
 application.properties:
@@ -128,16 +135,16 @@ spring:
 
 Некоторые параметры
 
-server.port: порт, на котором будет работать приложение. По умолчанию
+`server.port:` порт, на котором будет работать приложение. По умолчанию
 это 8080, но вы можете задать любой другой порт.
 
-[spring.application.name](http://spring.application.name/): имя вашего приложения. Оно может быть полезно для логирования и других вещей.
+`spring.application.name:` имя вашего приложения. Оно может быть полезно для логирования и других вещей.
 
-spring.profiles.active: активные профили Spring. 
+`spring.profiles.active:` активные профили Spring. 
 
-logging.level.root: уровень логирования для вашего приложения. Вы можете задать его, например, как INFO, WARN, ERROR или DEBUG.
+`logging.level.root:` уровень логирования для вашего приложения. Вы можете задать его, например, как INFO, WARN, ERROR или DEBUG.
 
-spring.main.banner-mode: режим баннера при запуске вашего приложения. можно отключить баннер, установив этот параметр в OFF.
+`spring.main.banner-mode:` режим баннера при запуске вашего приложения. можно отключить баннер, установив этот параметр в OFF.
 
 ### Профили Spring
 
@@ -200,7 +207,6 @@ public class AppConfig {
 
 Для запуска контроллера нужно в браузере нужно выполнить `localhost:8080/car`
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/ea81ed0a-2b39-4208-a877-05df4447555f/d0ea219d-bdc7-4829-912e-fc7dd954af96/Untitled.png)
 
 ```java
 ApplicationContext context = SpringApplication.run(Application.class, args);
@@ -268,7 +274,8 @@ https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using.buil
     <groupId>springboot.topjava.ru</groupId>
     <artifactId>SpringBootRestService</artifactId>
     <version>1.0</version>
-    <packaging>jar</packaging> // обеспечивает упаковку в jar
+    <!-- обеспечивает упаковку в jar--> 
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -288,7 +295,7 @@ https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using.buil
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
-
+<!-- Подключение плагина нужно для любого Spring Boot приложения--> 
     <build>
         <plugins>
             <plugin>
@@ -300,6 +307,27 @@ https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using.buil
 
 </project>
 ```
+
+## Создание основного класса приложения
+
+Этот последний шаг заключается в создании класса конфигурации и запуска приложения. Spring Boot поддерживает новую аннотацию @SpringBootApplication, которая эквивалентна использованию @Configuration, @EnableAutoConfiguration и @ComponentScan с их атрибутами по умолчанию
+
+
+Таким образом, вам просто нужно создать класс, аннотированный с помощью @SpringBootApplication, а Spring Boot включит автоматическую настройку и отсканирует ваши ресурсы в текущем пакете:
+
+
+package springboot.topjava.ru;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
 
 ## Spring Boot потрошитель
 
