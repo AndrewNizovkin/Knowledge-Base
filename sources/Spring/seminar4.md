@@ -135,5 +135,3 @@ public class MyService {
     private int value;
 }
 ```
-
-The end.
