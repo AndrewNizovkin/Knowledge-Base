@@ -16,11 +16,13 @@
 
 ## Статьи
 
-Путь фронтендера:https://habr.com/ru/articles/815057/
+[Путь фронтендера](https://habr.com/ru/articles/815057/)
 
-Курс Java Script: https://learn.javascript.ru/
+[Курс Java Script](https://learn.javascript.ru/)
 
-Видеокурс JS (вводный урок): https://youtu.be/MbRmNGKXVOg
+[Проектирование микросервисной архитектуры в среде NodeJS/NestJS](https://habr.com/ru/articles/841204/)
+
+[Видеокурс JS (вводный урок)](https://youtu.be/MbRmNGKXVOg)
 
 ### Структура web-страницы
 
