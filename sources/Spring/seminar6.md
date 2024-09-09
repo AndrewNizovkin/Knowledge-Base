@@ -37,7 +37,7 @@
     }
 ```
 
-Связь один ко многим:
+### Связь один ко многим:
 
 ```java
 import jakarta.annotation.Nullable;
@@ -70,7 +70,7 @@ public class Issue {
 }
 ```
 
-Дополнительный метод в интерфейсе репозитория, возвращающий количество книг на руках у читателя:
+### Дополнительный метод в интерфейсе репозитория, возвращающий количество книг на руках у читателя:
 
 ```java
 @Repository
@@ -89,22 +89,22 @@ import org.springframework.beans.factory.annotation.Value; // работает
 @NotNull // аннотация для валидации
 ```
 
-Первая зависимость это swagger
-
-Вторая - обеспечивает валидацию объектов, исп аннотации типа `@Valid, @NotNul`
-
-Третья подтягивает информацию по файлам, помеченным аннотацией @ConfigurationProperties, @Configuration и сохраняет в файлик
+### Swagger
 
 ```xml
+<!--Первая зависимость это swagger     -->
 <dependency>
 	<groupId>org.springdoc</groupId>
 	<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 	<version>2.3.0</version>
 </dependency>
-	<dependency>
+<!--Вторая - обеспечивает валидацию объектов, исп аннотации типа `@Valid, @NotNul` -->
+<dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-validation</artifactId>
 </dependency>
+<!--Третья подтягивает информацию по файлам, помеченным аннотацией @ConfigurationProperties, @Configuration и сохраняет в файлик
+ -->
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-configuration-processor</artifactId>
