@@ -2,7 +2,7 @@
 
 [Методичка](https://gbcdn.mrgcdn.ru/uploads/asset/5643780/attachment/d54a4f15a0a02093e2f5c28a5180d5ab.pdf)
 
-[Spring-потрошитель 1](https://www.notion.so/Spring-1-2cee0a61f7b443109cd4b4aa8fbc6f1e?pvs=21)
+
 
 [Время жизни бина](https://habr.com/ru/articles/658273/)
 
@@ -195,6 +195,39 @@ public class AppConfig {
 ### Автоконфигурация
 
 Автоконфигурация - это механизм, который позволяет Spring Boot автоматически настраивать ваше приложение на основе тех библиотек, которые присутствуют в вашем classpath. Например, если Spring Boot обнаруживает, что в вашем classpath есть библиотека Thymeleaf, он автоматически настроит шаблонизатор Thymeleaf для вас.
+
+### Передача переменной из файла конфигурации
+
+
+application.yaml:
+```yaml
+spring:
+  application:
+    name: spring-boot-lesson-7
+ application:
+    illue: 
+       max-allowed-books: 3
+```
+
+IssueProperties.java:
+```java
+@ConfigurationProperties("application.issue")
+@Component
+@Data
+public class IssueProperties {
+
+    int maxAllowedBooks
+} 
+
+```
+
+Теперь Spring создаст бин, из которого можно будет прочитать значение переменной `max-allowed-books`
+
+```java
+int max-allowed-books = issueProperties.getMaxAllowedBooks();
+
+```
+---
 
 ### Создание Spring приложения
 

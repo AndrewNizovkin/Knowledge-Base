@@ -316,7 +316,7 @@ public class JwtAuthenticationFilter
 ```java
 public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
 
-	public JwtAuthorizationFilter(AuthenticationManager	authenticationManager) {
+	public void JwtAuthorizationFilter(AuthenticationManager	authenticationManager) {
 		super(authenticationManager);
 	}
 	
