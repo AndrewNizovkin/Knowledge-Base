@@ -35,6 +35,8 @@
 
 [Статья о NoSql базах данных](https://habr.com/ru/companies/oleg-bunin/articles/319052/)
 
+[Redis: такой простой и такой сложный](https://habr.com/ru/companies/stm_labs/articles/841792/)
+
 [Триггеры в SQL](https://habr.com/ru/articles/37693/)
 
 ---
