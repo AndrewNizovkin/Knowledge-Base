@@ -60,6 +60,9 @@
 
 [JMIX - ускорение разработки веб-приложений на Java](https://www.jmix.ru/)
 
+
+[Записи](records.md)
+
 ### Глоссарий
 
 Обобщения (гл. 14 Gerbert Shildt)
@@ -100,7 +103,7 @@ Formatter f = new Formatter();
  f.format("There are %d planets in the Solar System. Sorry, Pluto", 8); 
  System.out.println(f);
 ```
-## Время
+### Время
 
 [java.util.Date](http://java.util.Date) - Первое что нужно о нем знать — **он хранит дату в миллисекундах**
 , которые прошли с 1 января 1970 года. Для этой даты есть даже отдельное название — “Unix-время”
@@ -109,3 +112,4 @@ Formatter f = new Formatter();
 Date date = new Date(); // Текущая дата на момент создания
 Date.getTime() // Вернёт время в мс с 1 января 1970 года
 ```
+

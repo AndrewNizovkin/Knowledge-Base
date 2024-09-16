@@ -1,10 +1,18 @@
 # Семинар 7.Spring Security.
 
+[Ссылка на видео](https://gbcdn.mrgcdn.ru/uploads/record/324862/attachment/c0c1ee9347046d6392750a7bbef6705c.mp4)
+
+Spring Security, при запуске приложения, предлагает поведение по умолчанию, при котором отображается форма аутентификации для ввода логина и пароля, при этом генерируя рандомный пароль, выводимый в лог. 
+
+Чтобы изменить это поведение создаём пакет `security`
+
 ## Шаг 1. Создаём UserDetailService
 
-`UserDetailsService` - класс, который будет обрабатывать запросы и возвращать сущность `UserDetails` , с которой будет работать Spring Security. Он будет искать в репозитории запись по логину
+`UserDetailsService` - интерфейс из пакета `springframwork.security`, который будет обрабатывать запросы и возвращать сущность `UserDetails` , с которой будет работать Spring Security. Он будет искать в репозитории запись по логину
 
-`CustomUserDetailService` если мы реализуем этот интерфейс, то спринг будет  использовать именно его и реализовать поведение в нём  
+Если мы реализуем этот интерфейс, то спринг будет  использовать именно его и реализовать поведение в нём  
+
+CustomUserDetailService.java - класс, который реализует `UserDetailService` 
 
 ```java
 import lombok.RequiredArgsConstructor;
@@ -38,7 +46,7 @@ public class CustomUserDetailService implements UserDetailsService {
 }
 ```
 
-`UserDetails` - объект SpringSecurity, который несёт информацию о пользователе
+`UserDetails` - интерфейс SpringSecurity, который несёт информацию о пользователе, который подключается
 
 ```java
 public interface UserDetails extends Serializable {
@@ -59,7 +67,7 @@ boolean isEnabled();
 }
 ```
 
-`User`  - одна из реализаций `UserDetails`
+`User`  - одна из реализаций `UserDetails` В коде используется конструктор, в который передаётся логин, пароль и список ролей. В него мы передаём данные, полученные из нашей базы данных пользователей (persons)
 
 `SimpleGrantedAuthority` Класс, который хранит в себе роль персонажа
 
@@ -67,7 +75,9 @@ boolean isEnabled();
 
 ## Шаг 2. Создаём класс для сравнения паролей
 
-В методе `encode` шифруется (или нет как в нашем случае) принимаемый пароль. Метод `matches` сравниваем зашифрованный пароль с паролем из базы
+Для сравнения паролей, полученных от пользователя и из базы данных, нужно создать класс, наследующий интерфейс `PasswordEncoder`
+
+В методе `encode` шифруется (или нет, как в нашем случае) принимаемый пароль. Метод `matches` сравниваем зашифрованный пароль с паролем из базы
 
 ```java
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -90,7 +100,7 @@ public class CustomPasswordEncoder implements PasswordEncoder {
 
 ## Шаг 3. Создаём конфигурацию Spring Security
 
-Создаём файл конфигурации и в нем методы, возвращающие наши бины
+Для управления доступом нужно создать файл конфигурации и в нем методы, возвращающие нужные нам бины
 
 ```java
 import org.springframework.context.annotation.Bean;
@@ -125,7 +135,7 @@ public class SecurityConfiguration {
 
         return httpSecurity
                 .authorizeHttpRequests(registry -> registry
-                        .requestMatchers("user/**").hasAnyAuthority("user", "admin") // любой из
+                        .requestMatchers("user/**").hasAnyAuthority("user", "admin") // любой из массива
                         .requestMatchers("admin/**").hasAuthority("admin") 
                         .requestMatchers("auth/**").authenticated() // для аутентифицированных
                         .requestMatchers("any/**").permitAll() // для всех
@@ -147,11 +157,23 @@ public class SecurityConfiguration {
 }
 ```
 
-Использование `oauth2` 
+### Oauth2 Authorization Framework
 
-Сервер авторизации **Keycloak**
+протокол авторизации, который позволяет приложениям получать ограниченный доступ к аккаунтам пользователя на внешних сервисах.
 
-https://www.keycloak.org/guides
+В Oauth2 определены четыре роли:
+
+- `resource owner` - хозяин ресурса
+
+- `resource server` - сервер, предоставляющий ресурс
+
+- `client` - приложение, которое делает запрос
+
+- `autorization server` - сервер авторизации
+
+### Сервер авторизации **Keycloak**
+
+[keycloak здесь](https://www.keycloak.org/guides)
 
 [keycloack.org/guides](http://keycloack.org/guides) → Downloads    1:10 запуск в Docker
 
