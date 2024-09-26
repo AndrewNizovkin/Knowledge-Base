@@ -121,7 +121,10 @@ public class SecurityConfiguration {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) 
                                                       throws Exception{
-// ----это для oauth2
+/**
+ * это для oauth2
+ * устанавливает конвертер, передавая ему список ролей, 
+ * которые извлекаются из JWT-токена по ключу realm_access
 /*
         JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
         converter.setJwtGrantedAuthoritiesConverter(source -> {
@@ -221,8 +224,24 @@ server:
   port: 8180
 ```
 
+В `pom.xml` нужно добавить зависимость:
+
+```xml
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+		</dependency>
+
+```
+
 Переходим на `localhost:8080/` и со страницы авторизации с параметрами (admin, admin) попадаем на страницу Keycloac
 
-Здесь мы можем добавить клиентов, которые требуют авторизации
+Здесь мы можем добавить клиентов, которые требуют авторизации. 
 
-... смотри семинар 1:14
+Для клиента устанавливаются роли
+
+Клиентское приложение делает POST-запрос на сервер авторизации (эндпоинт предоставляющий JWT) и получает access token и указывает его в заголовке запроса на ресурсный сервер. 
+
+access токен живёт недолго и возобновить его можно с помощью refresh токена и уже без пароля.
+
+Существует так же вариант авторизации через сторонний сервер авторизации, например какой нибудь соцсети. В этом случае этот сервер выдаёт токен для зарегистрированных у себя клиентов.
