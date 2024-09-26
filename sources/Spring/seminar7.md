@@ -141,7 +141,7 @@ public class SecurityConfiguration {
                         .requestMatchers("any/**").permitAll() // для всех
                         .anyRequest().denyAll() // в остальных случаях запретить
                 )
-                .formLogin(Customizer.withDefaults()) // это добавить вместо oauth2
+                .formLogin(Customizer.withDefaults()) // это стандартная форма авторизации, но можно добавить вместо неё свою (?oauth2?)
                 .csrf(AbstractHttpConfigurer::disable) // отключает защиту от CSRF-атак
 
 //                .oauth2ResourceServer(configurer -> configurer
@@ -157,6 +157,7 @@ public class SecurityConfiguration {
 }
 ```
 
+Теперь, при запуске приложения, и обращению на любой эндпоинт, будет отображена форма авторизация с полями `login` и `password`. При наличии в базе данных соответствующей записи и совпадении паролей (введённого и из базы данных) и прохождения фильтра аутентификации (проверка соответствия роли и открываемого ресурса), запрос будет передан.
 ### Oauth2 Authorization Framework
 
 протокол авторизации, который позволяет приложениям получать ограниченный доступ к аккаунтам пользователя на внешних сервисах.
@@ -167,7 +168,7 @@ public class SecurityConfiguration {
 
 - `resource server` - сервер, предоставляющий ресурс
 
-- `client` - приложение, которое делает запрос
+- `client` - приложение, которое делает запрос (браузер или бэк)
 
 - `autorization server` - сервер авторизации
 
@@ -175,9 +176,38 @@ public class SecurityConfiguration {
 
 [keycloak здесь](https://www.keycloak.org/guides)
 
-[keycloack.org/guides](http://keycloack.org/guides) → Downloads    1:10 запуск в Docker
+[keycloack.org/guides](https://www.keycloak.org/guides) → Downloads    1:10 запуск в Docker
 
-Keycloak работает на 8080, поэтому в конфигурации меняем порт и добавляем настройки для `oauth2` 
+Keycloac формирует JWT (JSON Web Token) [Здесь](https://jwt.io/)
+
+JWT состоит из трёх частей:
+
+```txt
+asdfsadff23234F2fasSdfqqwF4eqdsf234.sdfawr324rasFdfqS34traSsdf.21qqwefasWESRFwedf2q3q123rj
+```
+
+1. Заголовок
+
+2. Содержимое. Роли, время, прочая публичная информация
+
+3. Подпись. Удостоверяет валидность токена
+
+Keycloac выдаёт приложению (клиенту) этот токен и с ним приложение обращается на основной сервер
+
+Keycloac нужно установить, скачав с официального сайта и настроить переменные окружения
+
+Можно запустить Keycloac в докере. Для этого на официальном сайте выбираем пункт `Docker` и следуем инструкциям. 
+
+```bash
+docker run -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:25.0.6 start-dev
+
+# указанные параметры нужны для входа в сервис.
+# эта командная строка создаёт, но не запускает контейнер
+```
+
+Контейнер нужно запустить.
+
+Keycloak работает на 8080, поэтому в конфигурации меняем порт на 8180и добавляем настройки для `oauth2`, указывает путь к серверу авторизации
 
 ```yaml
   security:
@@ -191,6 +221,8 @@ server:
   port: 8180
 ```
 
-Postman. Отправка Post запроса с ключом `_csrf`
+Переходим на `localhost:8080/` и со страницы авторизации с параметрами (admin, admin) попадаем на страницу Keycloac
 
-... смотри семинар
+Здесь мы можем добавить клиентов, которые требуют авторизации
+
+... смотри семинар 1:14
