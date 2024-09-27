@@ -1,5 +1,14 @@
 # React
 
+
+[Повторное введение в JavaScript (JS учебник)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Language_overview)
+
+[Знакомство с React](https://ru.legacy.reactjs.org/tutorial/tutorial.html)
+
+[Создаём новое React-приложение](https://ru.legacy.reactjs.org/docs/create-a-new-react-app.html)
+
+---
+
 Самый простой вариант использования react на сайте - вставка следующих ссылок в заголовок (<head>…</head>) файла index.html:
 
 [Ссылки на CDN для вставки react  в тело сайта](https://ru.legacy.reactjs.org/docs/cdn-links.html)
@@ -203,11 +212,3 @@ create-react-app —version
 ```bash
 create-react-app setiwik-app
 ```
-
-https://developer.mozilla.org/ru/docs/Web/JavaScript/Language_overview
-
-https://codepen.io/gaearon/pen/oWWQNa?editors=0010
-
-https://ru.legacy.reactjs.org/tutorial/tutorial.html
-
-https://ru.legacy.reactjs.org/docs/create-a-new-react-app.html
