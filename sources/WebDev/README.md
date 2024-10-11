@@ -2,6 +2,8 @@
 
 [CSS](./css.md)
 
+[JS](js.md)
+
 [React](web6.md)
 
 ## Лекции GB

@@ -169,10 +169,10 @@ public void someMethod() {
 
 ```yaml
 info:
-	app:
-		name: "My Cool App"
-		version: "1.0.0"
-		description: "This app does something awesome!"
+  app:
+    name: "My Cool App"
+    version: "1.0.0"
+    description: "This app does something awesome!"
 
 ```
 
