@@ -67,6 +67,8 @@ https://gbcdn.mrgcdn.ru/uploads/record/315379/attachment/27f7d6dd716dac0a085812e
 
 ## Статьи, видео.
 
+[Kafka. Лучшие практики](https://habr.com/ru/articles/853652/)
+
 [Как развернуть сайт на VDS](https://habr.com/ru/articles/836980/)
 
 [Спринг потрошитель ч1](https://www.youtube.com/watch?v=BmBr5diz8WA)

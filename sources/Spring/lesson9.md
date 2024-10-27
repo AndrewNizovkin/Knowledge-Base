@@ -417,3 +417,5 @@ RabbitMQ передаёт сообщения между поставщиками
 ### Kafka
 
 [Для чего нужна Kafka](https://habr.com/ru/companies/maxilect/articles/840972/)
+
+[Кафка. Лучшие практики](https://habr.com/ru/articles/853652/)
