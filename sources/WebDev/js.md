@@ -8,6 +8,8 @@
 
 [Работа с формами](js-forms.md)
 
+[Вызов REST API из JavaScript](https://sky.pro/media/vyzov-rest-api-iz-javascript/)
+
 ### Типы данных
 
 В JavaScript есть 8 основных типов данных.
