@@ -6,6 +6,9 @@
 
 ## Статьи, разное.
 
-https://habr.com/ru/articles/820473/ - статья на Habr
+[Деплой web-приложений для новичков](https://habr.com/ru/articles/820473/)
 
 [Как развернуть сайт на VDS](https://habr.com/ru/articles/836980/)
+
+[Хостинг Docker-контейнеров](https://habr.com/ru/articles/850708/)
+
