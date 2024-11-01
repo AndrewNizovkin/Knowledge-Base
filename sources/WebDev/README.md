@@ -4,6 +4,8 @@
 
 [JS](js.md)
 
+[Bootstrap](./bootstrap.md)
+
 [React](web6.md)
 
 ## Лекции GB
