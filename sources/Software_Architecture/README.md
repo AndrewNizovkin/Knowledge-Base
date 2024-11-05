@@ -4,6 +4,14 @@
 
 ---
 
+## Статьи
+
+[BPMN и BPM движки в ИТ-проектах](https://bpmn2.ru/blog/bpmn-v-it-proektax-i-producta)
+
+---
+
+## Уроки GeekBrains
+
 [Урок-1. **Введение в понятие архитектуры, проектирование ПО и жизненный цикл программного продукта. UML-диаграммы**](sa1.md) 
 
 [ДЗ-1: Проектирование ПО. ULM-диаграммы](https://github.com/AndrewNizovkin/HomeWorks/tree/main/soft_architecture_1)

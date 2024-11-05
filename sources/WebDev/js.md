@@ -10,6 +10,10 @@
 
 [Вызов REST API из JavaScript](https://sky.pro/media/vyzov-rest-api-iz-javascript/)
 
+[jQuery для начинающих](https://habr.com/ru/articles/38208/)
+
+[jQuery домашняя страница](https://jquery.com/)
+
 ### Типы данных
 
 В JavaScript есть 8 основных типов данных.
