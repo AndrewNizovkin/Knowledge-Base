@@ -41,4 +41,13 @@ docker exec -it <id> bash
 
 # список образов
 docker image ls
+
+# список контейнеров
+docker container ls
+
+# список виртуальных дисков
+docker volume ls
+
+# Запуск phpMyAdmin и связь его с уже запущенным контейрером с базой данных
+docker run --name phpmyadmin1 --link dbcontainer-name:db -p 8080:80 phpmyadmin/phpmyadmin
  ```

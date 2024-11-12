@@ -53,6 +53,8 @@ myThread.join() // ожидает завершения потока, для ко
 
 myThread.setPriority(int priority) // устанавливает приоритет
 
+myThread.yield(); // уступает место другим потокам
+
 ```
 
 Монитор - это понятие, используемое в качестве взаимоисключающей блокировки. Только один поток исполнения может в одно и то же время владеть монитором. Когда поток исполнения запрашивает блокировку, то говорят, что он *входит* в монитор. Все другие потоки, пытающиеся войти в заблокированный монитор, будут приостановлены до тех пор, пока первый поток не *выйдет* из монитора.
@@ -201,98 +203,30 @@ void await() throws InterruptedException
 
 // Ожидание длится в течение ожидания в единицах_времени
 // TimeUnit - перечисление
-boolean await(long ожидание, TimeUnit единКомпоненты нового каркаса коллекций не являются потокобезопасными. Нужно воспользоваться алгоритмами из класса Collections типа SinchronizedList, чтобы получить их потокобезопасные версии.
 
-В отличие от них, унаследованные классы Stack, Properties, HashTable, Vector являются потокобезопасными.
-
-Некоторые методы различных коллекций могут генерировать исключения:
-
-- NoSuchElementException если в вызывающей коллекции отсутствуют какие нибудь элементы
-- ClassCastException если заданный элемент несовместим с элементами  коллекции
-- NullPointerException при попытке использовать null, если это недопустимо
-- IllegalArgumentException при указании неверного аргумента
-
-### Collection
-
-`java Interface Collection<E>` 
-
-Интерфейс, расширяющий Iterable, что позволяет перебирать все коллекции в цикле  в стиле for each. Находится на вершине иерархии каркаса коллекций и определяет основные методы для работы с коллекциями:
-
-`java <https://www.notion.so/9c7a9f11ecdf4b23bec86244b1e33127?pvs=21boolean> add(E object)  boolean clear()  boolean contains(Object object)  boolean isEmpty()  Iterator<E> iterator()  default Stream<E> paralleleStream()  default boolean removeIf(Predicate<? super E> predicate)  int size()  default Spliterator<E> spliterator()  default Stream<E> stream()  Object[] toArray()  <T> T[] toArray(T[] array)`  
-
-### List
-
-`java Interface List<E>` 
-
-Определяет такое поведение коллекции, при котором сохраняется последовательность элементов, которые можно получить по индексу. Может содержать одинаковые элементы.
-
-Начиная с JDK 9 внедрён фабричный перегруженный метод of() для создания неизменяемой формы List, составленной из переданных аргументов.
-
-`java static <E> List<E> of(E ... objects)  ..... // null-элементы не допустимы` 
-
-### Set
-
-`java Interface Set<>` 
-
-Определяет поведение коллекций, не допускающих дублирования элементов.
-
-Имеет фабричный метод:
-
-`java static <E> Set<E> of(E ... objects)` 
-
-### SortedSet
-
-`java interface SortedSet<E>` 
-
-Расширяет интерфейс Set. Определяет поведение множеств, отсортированных в порядке возрастания.
-
-### NavigableSet
-
-`java interface NavigableSet<E>` 
-
-Расширяет интерфейс SortedSet. Определяет поведение коллекции, извлечение элементов из которой осуществляется на основании наиболее точного совпадения с заданным значением или несколькими значениями.
-
-Queue
-
-`java interface Queue<E>` 
-
-Определяет поведение очереди по принципу первым вошёл, первым обслужен.
-
-### Dequeue
-
-`java interface Dequque<>` 
-
-Определяет поведение двухсторонней очереди.
-
-Методы push(), pop() позволяют использовать как стек.
-
-### Классы коллекций
-
-- AbstractCollection
-
-- AbstractList
-
-- AbstractQueue
-
-- AbstractSequentalList
-
-- LinkedList
-
-- ArrayList
-
-- ArrayDeque
-
-- AbstractSet
-
-- EnumSet
-
-- HashSet
-
-- LinkedHashSet
-
-- TreeSetица_времени) throws InterruptedException 
-
+boolean await(long ожидание, TimeUnit единиица_времени) throws InterruptedException
 ```
+Компоненты нового каркаса коллекций не являются потокобезопасными. Нужно воспользоваться алгоритмами из класса `Collections` типа `SinchronizedList`, чтобы получить их потокобезопасные версии.
+
+В отличие от них, унаследованные классы `Stack`, `Properties`, `HashTable`, `Vector` являются потокобезопасными.
+
+
+### Ключевое слово `volatile`
+
+Если мы объявляем переменную с ключевым словом `volatile`, то это означает, что она будет атомарно читаться и записываться.
+
+```java
+public class Main {
+
+   public volatile long x = 2222222222222222222L;
+
+   public static void main(String[] args) {
+
+   }
+}
+```
+
+
 
 ```java
 CountDownLatch cd1 = new CountDownLatch(5);
