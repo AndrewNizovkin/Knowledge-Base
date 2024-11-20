@@ -33,6 +33,8 @@
 
 [Транзакции, процедуры, функции](https://www.notion.so/SQL-b3bafe187438428ab68eb6c132876085?pvs=21)
 
+[Оптимистические и пессимистические блокировки на примере Hibernate (JPA)](https://habr.com/ru/articles/858714/)
+
 [Статья о NoSql базах данных](https://habr.com/ru/companies/oleg-bunin/articles/319052/)
 
 [Redis: такой простой и такой сложный](https://habr.com/ru/companies/stm_labs/articles/841792/)
