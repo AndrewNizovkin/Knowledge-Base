@@ -50,4 +50,4 @@
 
 [Управление продуктом](./sources/ProductManagement/README.md)
 
-[Фриланс](./sources/Freelance/README.md)
+[Фриланс и работа по найму](./sources/Freelance/README.md)
