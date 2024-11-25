@@ -6,6 +6,8 @@
 
 [Информатика](./sources/Informatics/README.md)
 
+[Геодезия и Топография](./sources/Geodesy/README.md)
+
 [Нейронауки и обучение](./sources/Neuroscience/README.md)
 
 [Психология](./sources/Psychology/README.md)
