@@ -8,6 +8,8 @@
 
 [BPMN и BPM движки в ИТ-проектах](https://bpmn2.ru/blog/bpmn-v-it-proektax-i-producta)
 
+[Domain-Driven Design: чистая архитектура снизу доверху](https://habr.com/ru/companies/sberbank/articles/781612/)
+
 ---
 
 ## Уроки GeekBrains
