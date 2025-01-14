@@ -116,6 +116,75 @@
     }
 ```
 
+### [Как отправить данные через POST thymeleaf form без формы ввода данных](https://ru.stackoverflow.com/questions/1487559/%D0%9A%D0%B0%D0%BA-%D0%BE%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%8C-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-%D1%87%D0%B5%D1%80%D0%B5%D0%B7-post-thymeleaf-form-%D0%B1%D0%B5%D0%B7-%D1%84%D0%BE%D1%80%D0%BC%D1%8B-%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85)
+
+```html
+<!-- form-file.html -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>table page</title>
+</head>
+<body>
+
+    <table class="table table-sm table-hover align-middle">
+    <thead>
+    <tr>
+        <th scope="col">сумма(руб.)</th>
+        <th scope="col">Проценты(%)</th>
+        <th scope="col">Срок(лет)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="viewOffer : ${offers}">
+        <form action="#" th:action="@{/service/offerDetails}" th:object="${viewOffer}" method="post">
+        <tr>
+            <td  th:text="${viewOffer.sum}">сумма</td>
+            <td th:text="${viewOffer.percentage}">процент</td>
+            <td  th:text="${viewOffer.term}">срок</td>
+            <td>
+                <div class="d-grid gap-2 d-md-block">
+                        <input name="sum" id="sum" th:value="${viewOffer.sum}" type="hidden"/>
+                        <input name="percentage" id="percentage" th:value="${viewOffer.percentage}" type="hidden"/>
+                        <input name="term" id="term" th:value="${viewOffer.term}" type="hidden"/>
+                        <button type="submit" value="Подробнее">Подробнее</button>
+                </div>
+            </td>
+        </tr>
+        </form>
+    </th:block>
+    </tbody>
+
+</body>
+</html>
+
+```
+В модель добавляем геттеры и сеттеры
+
+```java
+@Data
+@NoArgsConstructor
+public class ViewOffer {
+    public int sum;
+    public double percentage;
+    public int term;
+}
+```
+
+Метод контроллера:
+
+```java
+@PostMapping(value = "/offerDetails")
+public String issueCredit(@ModelAttribute ViewOffer viewOffer, Model model) {
+    // бизнес-логика
+    return "form-file"
+}
+
+```
+
+
 ### Использование переменной, объявленной в файле настроек
 
 ```bash
