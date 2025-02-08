@@ -63,6 +63,8 @@
 
 [Rest API отслеживание почтовых сообщений](https://github.com/Den-m1985/postalAPI)
 
+[mapstruct использование для маппинга dto объектов](https://habr.com/ru/articles/818489/)
+
 ---
 
 ## Семинары Андрея Голикова
