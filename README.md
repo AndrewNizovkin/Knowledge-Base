@@ -32,6 +32,8 @@
 
 [Spring](./sources/Spring/README.md)
 
+[Jmix](./sources/Jmix/README.md)
+
 [Тестирование](./sources/Testing/README.md)
 
 ---
