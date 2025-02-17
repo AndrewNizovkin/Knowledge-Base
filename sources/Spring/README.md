@@ -37,6 +37,36 @@
 
 [12.Паттерны проектирования и GoF паттерны в Spring приложении.](lesson12.md)
 
+---
+
+## Статьи, видео.
+
+[Simple Spring (полный фарш)](https://habr.com/ru/articles/872776/)
+
+[Kafka. Лучшие практики](https://habr.com/ru/articles/853652/)
+
+[Как развернуть сайт на VDS](https://habr.com/ru/articles/836980/)
+
+[Спринг потрошитель ч1](https://www.youtube.com/watch?v=BmBr5diz8WA)
+
+[Конспект Spring-потрошитель, часть 1.](https://www.notion.so/Spring-1-2b9ddd58aca640dcb742786a5040a5c0?pvs=21)
+
+[Спринг потрошитель ч2](https://www.youtube.com/watch?v=cou_qomYLNU)
+
+[Конспект. Spring-потрошитель, часть 2](https://www.notion.so/Spring-2-de4fe08aa707463e9640cc6fb40e24f4?pvs=21)
+
+[Спринг построитель](https://www.youtube.com/watch?v=rd6wxPzXQvo)
+
+[Спринг бут потрошитель ч1](https://www.youtube.com/watch?v=yy43NOreJG4)
+
+[Спринг бут потрошитель ч2](https://www.youtube.com/watch?v=7Cq5zEm2wq0)
+
+[Rest API отслеживание почтовых сообщений](https://github.com/Den-m1985/postalAPI)
+
+[mapstruct использование для маппинга dto объектов](https://habr.com/ru/articles/818489/)
+
+---
+
 ## Семинары Андрея Голикова
 
 https://gbcdn.mrgcdn.ru/uploads/record/304564/attachment/0e48d52078ec3367fe0bdfb51c6daa7b.mp4
@@ -62,27 +92,3 @@ https://gbcdn.mrgcdn.ru/uploads/record/313279/attachment/a0d9bf56f8db6493d0154be
 https://gbcdn.mrgcdn.ru/uploads/record/314550/attachment/45966c48683d06435d531ebab8dea4e8.mp4
 
 https://gbcdn.mrgcdn.ru/uploads/record/315379/attachment/27f7d6dd716dac0a085812e0b8bef761.mp4
-
----
-
-## Статьи, видео.
-
-[Kafka. Лучшие практики](https://habr.com/ru/articles/853652/)
-
-[Как развернуть сайт на VDS](https://habr.com/ru/articles/836980/)
-
-[Спринг потрошитель ч1](https://www.youtube.com/watch?v=BmBr5diz8WA)
-
-[Конспект Spring-потрошитель, часть 1.](https://www.notion.so/Spring-1-2b9ddd58aca640dcb742786a5040a5c0?pvs=21)
-
-[Спринг потрошитель ч2](https://www.youtube.com/watch?v=cou_qomYLNU)
-
-[Конспект. Spring-потрошитель, часть 2](https://www.notion.so/Spring-2-de4fe08aa707463e9640cc6fb40e24f4?pvs=21)
-
-[Спринг построитель](https://www.youtube.com/watch?v=rd6wxPzXQvo)
-
-[Спринг бут потрошитель ч1](https://www.youtube.com/watch?v=yy43NOreJG4)
-
-[Спринг бут потрошитель ч2](https://www.youtube.com/watch?v=7Cq5zEm2wq0)
-
-[Rest API отслеживание почтовых сообщений](https://github.com/Den-m1985/postalAPI)

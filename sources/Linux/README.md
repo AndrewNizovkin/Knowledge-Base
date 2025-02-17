@@ -1,10 +1,17 @@
 # Linux
 
-
+### Разное
 
 [Статьи о Linux](https://losst.pro/) 
 
-## Ссылки:
+[Установка samba](samba_install.md)
+
+[Установка java, IntellijIdea](./java_intellijIdea_install.md)
+
+[Установка Docker](./docker_install.md)
+
+
+## Лекции GB:
 
 [Лекция 1. Основы Linux. Установка системы](https://gbcdn.mrgcdn.ru/uploads/asset/4280474/attachment/09b047516a361df5480bcc1917640740.pdf)
 
@@ -39,11 +46,6 @@
 [ДЗ: Запуск стека для веб-приложения.](https://cloud.mail.ru/public/eLLh/nDZH4wvez)
 
 [Основы Docker](https://cloud.mail.ru/public/5dcH/vPasfrQpW)
-
-[Установка samba](samba_install.md)
-
-[Установка java, IntellijIdea](./java_intellijIdea_install.md)
-
 
 ### Курс "Докеризация и контейнеризация
 
