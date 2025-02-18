@@ -7,3 +7,7 @@ Jmix студия устанавливается как плагин в Intellij
 - [Создание экрана с чистого листа](./creates-new-screen.md)
 
 - [Работа с данными. Интерфейс DataManager](./data-manager.md)
+
+- [Создание экрана DTO](./dto-view.md)
+
+- [Работа с файлами](./files.md)
