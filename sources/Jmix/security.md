@@ -26,6 +26,21 @@
 
 Добавим в контроллер код, определяющий текущего пользователя используя `Code Snippets` -> `Get current user`.
 
+```java
+public class TimeEntryDetailView extends StandardDetailView<TimeEntry> {
+
+    @Autowired
+    private CurrentAuthentication currentAuthentication;
+
+    @Subscribe
+    public void onInitEntity(final InitEntityEvent<TimeEntry> event) {
+        event.getEntity().setEntryDate(LocalDateTime.now());
+        final User user = (User) currentAuthentication.getUser();
+        event.getEntity().setUser(user);
+    }
+}
+```
+
 ### Роли и политики
 
 Роли в Jmix — это наборы политик, которые предоставляют пользователям доступ к различным ресурсам в приложении Jmix. Они позволяют ограничить доступ пользователей к минимально необходимой части функциональности. Пользователь без ролей не имеет разрешений и не сможет получить доступ к системе.
