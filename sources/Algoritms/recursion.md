@@ -1,5 +1,7 @@
 # Рекурсия
 
+### Умножение числа `a` на `b`
+
 ```java
 public int recursiveMultiplication(int a, int b) {
     if(b == 1) {
@@ -10,3 +12,4 @@ public int recursiveMultiplication(int a, int b) {
 }
 
 ```
+
