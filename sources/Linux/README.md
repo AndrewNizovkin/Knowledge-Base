@@ -8,6 +8,8 @@
 
 [Установка java, IntellijIdea](./java_intellijIdea_install.md)
 
+[Создание ярлыка для sh-скрипта](./create-label-script.md)
+
 [Установка Docker](./docker_install.md)
 
 
