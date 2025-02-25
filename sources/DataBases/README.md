@@ -51,6 +51,8 @@
 
 [Триггеры в SQL](https://habr.com/ru/articles/37693/)
 
+[Что нужно знать, чтобы писать быстрые SQL-запросы](https://habr.com/ru/companies/T1Holding/articles/883988/)
+
 ---
 
 ![scr1](./images/scr1.png)
@@ -96,3 +98,17 @@ mysql> source /tmp/script.sql --запуск скрипта инструкцие
 $ mysql -h 127.0.0.1 -P 3306 -u root -p < /tmp/script.sql
 -- Enter password:
 ```
+
+### Индексирование полей
+
+Для быстрого поиска по полям создаются индексы. В этом случае будет использоваться бинарный поиск по значениям этих полей.
+
+```sql
+CREATE INDEX IX_Books_Author ON Books (Author);
+
+CREATE INDEX IX_Books_Title ON Books (Title);
+
+CREATE INDEX IX_Magazines_Year_Month ON Magazines (Year, Month);
+```
+
+Поле, по которому составлен индекс (упорядочены карточки) в реляционной теории называется ключом. Часто применяют составной ключ из нескольких полей, как в примере с годом и месяцем. 
