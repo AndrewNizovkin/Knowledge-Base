@@ -57,3 +57,5 @@
 [Управление продуктом](./sources/ProductManagement/README.md)
 
 [Фриланс и работа по найму](./sources/Freelance/README.md)
+
+[Аналитика](./sources/Analytics/README.md)

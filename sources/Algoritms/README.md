@@ -119,8 +119,7 @@ public getRightIndex(int parentIndex) {
         if(key < node.key) {
             if(node.leftChild.isEmpty) {
                 throw new RuntimeException("Not found");
-            }
-            if(node.leftChild.isEmpty)
+            } 
             return findeNode(key, node.leftChild);
         } else{
             if(node.rightChild.isEmpty) {
@@ -138,5 +137,5 @@ public getRightIndex(int parentIndex) {
 
  Узлы этого типа бинарных деревьев имеют дополнительный атрибут "цвет", наличие которого позволяет алгоритму балансировки с помощью поворотов достигать логарифмической высоты дерева.
 
-Несбалансированное дерево с высотой `n` называется "бамбуком"
+> Несбалансированное дерево с высотой `n` называется "бамбуком"
 
