@@ -59,3 +59,7 @@
 [Фриланс и работа по найму](./sources/Freelance/README.md)
 
 [Аналитика](./sources/Analytics/README.md)
+
+[Машинное обучение](./sources/MachineLearning/README.md)
+
+[Компьютерное знение]()
