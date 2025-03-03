@@ -62,5 +62,4 @@
 
 [Машинное обучение](./sources/MachineLearning/README.md)
 
-
 [Кибербезопасность](./sources/Cybersecurity/README.md)
