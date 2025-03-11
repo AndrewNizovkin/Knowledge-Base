@@ -13,3 +13,5 @@
 [Работа по найму](https://cloud.mail.ru/public/z8yR/cWriRbKkT)
 
 [Собеседование](./interview.md)
+
+[Вопросы, часто встречающиеся на собеседованиях](./interview-questions.md)
