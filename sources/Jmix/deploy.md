@@ -89,3 +89,13 @@
 
 [Установка Apache Tomcat на Ubuntu 22.04](https://ruvds.com/ru/helpcenter/kak-ustanovit-apache-tomcat/)
 
+###  Работа с Docker
+
+Образ можно создать с помощью терминальной команды:
+
+```bash
+./gradlew -Pvaadin.productionMode=true bootBuildImage --imageName=jmixtest/jmix-pm
+
+# jmixtest/jmix-pm - имя контейнера. Указывается в docker-compose.yaml
+```
+В корневой папке ПРОЕКТА нужно создать папку `docker`, а в ней файл `docker-compose.yaml`

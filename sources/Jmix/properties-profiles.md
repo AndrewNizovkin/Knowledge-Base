@@ -82,7 +82,7 @@ $env:SPRING_PROFILES_ACTIVE='dev'
 
 ```java
 public interface PaymentService {
-    int performPayment(BigDecimal amount, Long accountId)
+    int performPayment(BigDecimal amount, Long accountId);
 }
 
 @Service
