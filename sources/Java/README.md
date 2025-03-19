@@ -63,6 +63,8 @@
 
 [Записи](records.md)
 
+[Apache POI. Чтение и запись данных в Excel из Java](https://sky.pro/wiki/java/chtenie-i-zapis-dannykh-v-excel-iz-java-instruktsiya/)
+
 ### Глоссарий
 
 Обобщения (гл. 14 Gerbert Shildt)
