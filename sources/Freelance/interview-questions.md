@@ -1,5 +1,7 @@
 # Вопросы, встречающиеся на собеседованиях
 
+[Здесь много вопросов](https://zhukovsd.github.io/java-backend-interview-prep/questions/)
+
 1. DARQ 
 
 Распределенный реестр (D — Distributed ledger technologies), искусственный интеллект (A — Artificial intelligence), расширенная реальность (R — Extended reality), квантовые вычисления (Q — Quantum) - CNews.
@@ -152,3 +154,4 @@ TLS расшифровывается как Transport Layer Security (безоп
 14. Какие типы бинов знаешь (вопрос был про синглтон и прототайп, но их оказывается 7 шт.)
 
 15. Чем отличаеются @Service @Component @RestController  и т.п.? и что общего?
+

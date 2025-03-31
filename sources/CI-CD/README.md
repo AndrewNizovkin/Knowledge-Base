@@ -13,3 +13,5 @@
 [Хостинг Docker-контейнеров](https://habr.com/ru/articles/850708/)
 
 [Профессия DevOps](https://habr.com/ru/articles/862766/)
+
+[DevOps Лекции](https://disk.yandex.ru/d/dYqH-7-Li6mVUA )
