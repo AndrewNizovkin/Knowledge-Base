@@ -4,6 +4,8 @@
 
 Jmix студия устанавливается как плагин в Intellij Idea. 
 
+- [Создание JPA-сущности](./jpa-entity.md)
+
 - [Создание экрана с чистого листа](./creates-new-screen.md)
 
 - [Работа с данными. Интерфейс DataManager](./data-manager.md)
