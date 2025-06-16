@@ -2,7 +2,7 @@
 
 ## Java Core
 
-[Платформа: история и окружение.](,/javacore1.md)
+[Платформа: история и окружение.](./javacore1.md)
 
 [ДЗ_1. Компиляция и интерпретация кода.](https://github.com/AndrewNizovkin/HomeWorks/tree/main/java_core_1)
 
