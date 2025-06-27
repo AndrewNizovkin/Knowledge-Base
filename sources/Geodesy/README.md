@@ -12,3 +12,5 @@
 - [ГОСТ 21.301](https://cloud.mail.ru/public/MuCj/AA9AibWxt)
 
 - [Пособие по производству геодезических работ в строительстве](https://cloud.mail.ru/public/SPRb/9SkBsMDTD)
+
+- [PHOTOMOD GeoCalculator Бесплатный геодезический калькулятор](https://racurs.ru/program-products/photomod-geocalculator/)
