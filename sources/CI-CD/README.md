@@ -15,3 +15,7 @@
 [Профессия DevOps](https://habr.com/ru/articles/862766/)
 
 [DevOps Лекции](https://disk.yandex.ru/d/dYqH-7-Li6mVUA )
+
+[REST API в облаке: пошаговый гайд на Java + Spring](https://habr.com/ru/companies/selectel/articles/927736/)
+
+[Шпаргалка для новичков — от GIT до Деплоя / Хабр](https://habr.com/ru/articles/928532/)

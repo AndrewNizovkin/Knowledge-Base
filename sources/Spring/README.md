@@ -65,6 +65,8 @@
 
 [mapstruct использование для маппинга dto объектов](https://habr.com/ru/articles/818489/)
 
+[Spring Security / Хабр](https://habr.com/ru/articles/927788/)
+
 ---
 
 ## Семинары Андрея Голикова
