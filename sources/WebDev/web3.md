@@ -4,6 +4,24 @@
 
 [Конспект в pdf](https://cloud.mail.ru/public/RJiN/dQoxPWNcG)
 
+### Базовая структура HTML-страницы
+
+```html
+<!DOCTYPE=html>
+    <html lang="ru">
+        <head>
+            <!-- Заголовок -->
+            <title>Моя страница</title>
+            <meta charset="utf-8">
+
+        </head>
+        <body>
+            <!-- Тело -->
+
+        </body>
+    </html>
+```
+
 # Глоссарий
 
 `<strong>` - хотя и делает текст жирным, как и `<b>` используется для SEO оптимизации, чтобы обратить внимание поисковых роботов.
