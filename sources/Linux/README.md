@@ -12,6 +12,8 @@
 
 [Установка Docker](./docker_install.md)
 
+[Установка и настройка SSH](./ssh.md)
+
 
 ## Лекции GB:
 
