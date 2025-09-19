@@ -15,7 +15,9 @@
 
 - [ГОСТ Р 51872 "Документация исполнительная геодезическая"](https://cloud.mail.ru/public/yqA1/RMcni2nnM)
 
-- [СП 47.13330 "Инженерные изыскания для строительства основные положения"](https://cloud.mail.ru/public/yqA1/RMcni2nnM)
+- [СП 47.13330 "Инженерные изыскания для строительства основные положения"](https://cloud.mail.ru/public/ga8A/yGTfcv27c)
+
+[СП 70.13330 Несущие и ограждающие конструкции](https://cloud.mail.ru/public/vmMp/LrRSaoVZD)
 
 - [Инструкция по производству маркшейдерских работ](https://cloud.mail.ru/public/vbGB/kfLPP5aEZ)
 
