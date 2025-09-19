@@ -3,7 +3,7 @@
 
 - [СП 126.13330 "Геодезические работы в строительстве"](https://cloud.mail.ru/public/fVUB/vTXEGECzo)
 
-- [ГОСТ Р 51872 "Документация исполнительная геодезическая"](https://cloud.mail.ru/public/gGrn/44UrkYKq4)
+- [ГОСТ Р 51872 "Документация исполнительная геодезическая"](https://cloud.mail.ru/public/yqA1/RMcni2nnM)
 
 - [СП 47.13330 "Инженерные изыскания для строительства основные положения"](https://cloud.mail.ru/public/yqA1/RMcni2nnM)
 
