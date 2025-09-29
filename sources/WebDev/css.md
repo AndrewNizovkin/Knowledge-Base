@@ -87,7 +87,96 @@ div p {
 |font-weight|жирность начертания (число, кратное 100 от 100 до 900)|
 |font-style|стиль начертания (italic, bold, normal, oblique)|
 |color|цвет текста|
+|font-family|гарнитура шрифта (serif, sans-serif, arial)|
+|line-height|междустрочный интервал|
+|text-decoration|подчёркнутый, надчёркнутый, перечёркнутый (underline, overline, line-throught)|
+|text-transform|заглавные, строчные (uppercase, lowercase)|
+|text-align|выравнивание текста (left, right, center, justify-по ширине)|
 
+### Свойства списков
 
+- list-style-type - тип маркера
+    
+    - неупорядоченные списки
+    
+        - disc
+    
+        - circle
+    
+        - square
+    
+    - нумерованные списки
+    
+        - decimal - арабские
+    
+        - lower-roman - стр. римские
+    
+        - upper-roman - загл. римские
+    
+        - lower-alpha - стр. латинские буквы
+    
+        - upper-alpha- загл. латинские буквы
 
+- list-style-image - устанавливает любую картинку
 
+    ```css
+    list-style-image: url("images/image.png")
+    ```
+
+- list-stile-position - положение маркера списка
+
+    - outside - положение снаружи (по умолчанию)
+    - inside - внутри
+
+### Цвет в CSS
+
+Цвет можно задать следующими способами:
+
+- в виде 16-ричного кода
+
+    ```css
+    color: #000000;
+    color: #ffffff;
+    color: #ff00ff;
+    ```
+
+- в rgb-формате, воспользовавшись функцией rgb(r, g, b)
+
+    ```css
+    color: rgb(0, 0, 0);
+    ```
+- в rgba-формате, задав прозрачность (0.0 - 1.0)
+
+    ```css
+    color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 0, 255, 0.2);
+    ```
+### Свойства фоновых изображений
+
+- backgraund-color - цвет фона
+
+- background-image - фоновое изображение
+
+    ```css
+    background-image: url(images/image.jpg);
+    ```
+
+- backgraund-repeat - повторение изображения
+    
+    - no-repeat
+    
+    - repeat-x
+
+    - repeat-y
+
+- background-position - положение фонового изображения
+
+    - top
+
+    - bottom
+
+    - left
+
+    - right
+
+    - center
