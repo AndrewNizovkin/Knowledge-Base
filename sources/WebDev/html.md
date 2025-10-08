@@ -112,29 +112,7 @@
 
 ```html
 <table>
-    <tr>
-        <th>Имя</th>
-        <th>Фамилия</th>
-    </tr>
-    <tr>
-        <td>Вася</td>
-        <td>Пупкин</td>
-    </tr>
-        <tr>
-        <td>Маша</td>
-        <td>Голубкина</td>
-    </tr>
-    <tfoot>
-        <tr>
-            <th>Итого</th>
-            <th>2 ребёнка</th>
-        </tr>
-    </tfoot>
-</table>
-
-<!-- Расширенный вариант -->
-
-<table>
+    <caption>Заголовок таблицы</caption>
     <thead>
         <tr>
             <th>Имя</th>
