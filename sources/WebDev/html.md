@@ -193,5 +193,29 @@
 </figure>
 ```
 
+### Элемент details
 
+Элемент `details` позволяет создавать раскрываемый блок, который по умолчанию скрыт. Иногда такой элемент еще называют `accordion`.
 
+Данный элемент содержит элемент `summary`, который представляет заголовок для блока, и этот заголовок отображается в скрытом режиме. Например:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Элемент details в HTML5</title>
+    </head>
+    <body>
+        <details>
+            <summary>Флагманы 2015</summary>
+            <ul>
+                <li>iPhone 6S Plus</li>
+                <li>Nexus 6P</li>
+                <li>Galaxy S6 Edge</li>
+                <li>Lumia 950 XL</li>
+            </ul>
+        </details>
+    </body>
+</html>
+```
