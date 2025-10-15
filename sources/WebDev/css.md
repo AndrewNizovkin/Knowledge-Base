@@ -752,6 +752,24 @@ box-shadow: 5px 3px 8px 3px #faa, 10px 4px 10px 3px #888 inset;
 |none|стилизуемый элемент ведет себя стандартным образом, то есть принимает участие в обтекании справа и слева|
 ---
 
+## Прокрутка элементов
+
+Свойство `overflow` позволяет настроить поведение блока в ситуации, когда содержимое блока занимает гораздо больше места, чем определено шириной и высотой блока и добавить возможность прокрутки. Это свойство может принимать следующие значения:
+
+|overflow:|результат|
+|-|-|
+|auto|если контент выходит за границы блока, то создается прокрутка. В остальных случаях полосы прокрутки не отображаются|
+|hidden|отображается только видимая часть контента. Контент, который выходит за границы блока, не отображается, а полосы прокрутки не создаются|
+|scroll|в блоке отображаются полосы прокрутки, даже если контент весь помещается в границах блока, и таких полос прокрутки не требуется|
+|visible|значение по умолчанию, контент отображается, даже если он выходит за границы блока|
+
+Свойство overflow управляет полосами прокрутки как по вертикали, так и по горизонтали. С помощью дополнительных свойств overflow-x и overflow-y можно определить прокрутку соответственно по горизонтали и по вертикали. Данные свойства принимают те же значения, что и overflow:
+
+```css
+overflow-x: auto;
+overflow-y: hidden;
+```
+
 ## Линейный градиент
 
 Градиенты представляют плавный переход от одного цвета к другому. В CSS3 имеется ряд встроенных градиентов, которые можно использовать для создания фона элемента.
@@ -1398,6 +1416,177 @@ ul:after {
 
 ## [Создание простейшего макета](https://metanit.com/web/html5/8.8.php)
 
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- <link href="styles.css" rel="stylesheet"> -->
+        <title>Блочная верстка в HTML5</title>
+      <style>
+        * {
+    box-sizing: border-box;
+}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, ul, li{
+                 
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+body {
+    font-family: Verdana, Arial, sans-serif;    
+    background-color: #f7f7f7;
+}
+#header{ 
+    background-color: #f4f4f4;
+}
+#header h1 {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 30px 30px 30px 10px;
+    clear: both;
+}
+#nav {
+    background-color: #eee;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+#nav li {
+    float: left;
+    list-style: none;   
+}
+#nav a {
+    display: block;
+    color: black;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-right: 1px solid #ccc;
+}
+#nav li:last-child a {
+    border-right: none; 
+}
+#nav a:hover {
+    font-weight: bold;
+}
+#nav:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+.wrapper{
+    background-color: #f7f7f7;
+}
+.aside h2 {
+    font-size: 0.95em;
+    margin-top: 15px;
+}
+.aside h3 {
+    font-size: 0.85em;
+    margin-top: 10px;
+}
+.aside p, .aside li {
+    font-size: .75em;
+    margin-top: 10px;   
+}
+.aside li{ 
+    list-style-type: none;
+}
+#sidebar1 {
+    float: left;
+    width: 20%; 
+    padding: 0 10px 0 20px;
+}
+#sidebar2 {
+    float: right;
+    width: 20%; 
+    padding: 0 20px 0 10px;
+}
+#article{
+    background-color: #fafafa;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 15px;
+    width: 60%;
+}
+#article:after{
+    clear:both;
+    display:table;
+    content:'';
+}
+#article h2{
+    font-size: 1.3em;
+    margin-bottom:15px;
+}
+#article p{
+    line-height: 150%;
+    margin-bottom: 15px;
+}
+#footer{ 
+    border-top: 1px solid #ccc;
+    font-size: .8em;    
+    text-align: center;
+    padding: 10px 10px 30px 10px;
+}
+#nav ul, #header h1, .wrapper, #footer p {
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+.wrapper, #nav, #header, #footer{
+    min-width: 768px;
+}
+      </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>MySyte.com - Сайт о Lorem Ipsum</h1>
+            <div id="nav">
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Форум</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">О сайте</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div id="sidebar1" class="aside">
+                <h2>The standard Lorem Ipsum passage</h2>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                ut labore et dolore magna aliqua..."</p>
+                </div>
+            <div id="sidebar2" class="aside">
+                <h2>1914 translation by H. Rackham</h2>
+                <p>It is a long established fact that a reader will be distracted by the readable 
+                content of a page when looking at its layout.</p>
+                <h3>Options</h3>
+                <ul>
+                    <li>Item1</li>
+                    <li>Item2</li>
+                    <li>Item3</li>
+                </ul>
+            </div>
+            <div id="article">
+                <h2>What is Lorem Ipsum?</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of 
+                classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, 
+                a Latin professor at Hampden-Sydney College in Virginia...</p>
+            </div>
+        </div>
+        <div id="footer">
+            <p>Contacts: admin@mysyte.com</p>
+            <p>Copyright © MySyte.com, 2016</p>
+        </div>
+    </body>
+</html>
+```
+
 ## Позиционирование
 
 Основным свойством, которые управляют позиционированием в CSS, является свойство `position`. Это свойство может принимать одно из следующих значений:
@@ -1410,3 +1599,106 @@ ul:after {
 |fixed|элемент позиционируется относительно окна бразуера, это позволяет создать фиксированные элементы, которые не меняют положения при прокрутке|
 
 > Не следует одновременно применять к элементу свойство `float` и любой тип позиционирования, кроме `static` (то есть тип по умолчанию).
+
+### Абсолютное позиционирование
+
+Область просмотра браузера имеет верхний, нижний, правый и левый края
+
+|свойство|назначение|
+|-|-|
+|left|отступ от края слева|
+|right|отступ от края справа|
+|top|отступ от края контейнера сверху|
+|bottom |отступ снизу|
+
+Значения этих свойств указываются в пикселях, em или процентах. Необязательно задавать значения для всех четырех сторон. Как правило, устанавливают только два значения - отступ от верхнего края `top` и отступ от левого края `left`.
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Блочная верстка в HTML5</title>
+        <style>
+            .header {
+                position: absolute;
+                left: 100px;
+                top: 50px;
+                width: 430px;
+                height: 100px;
+                background-color: rgba(128, 0, 0, 0.5);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header"></div>
+        <p>HELLO WORLD</p>
+    </body>
+</html>
+```
+> При этом не столь важно, что после этого элемента `div` идут какие-то другие элементы. Данный блок `div` в любом случае будет позиционироваться относительно границ области просмотра браузера.
+
+> Если элемент с абсоютным позиционированием располагается в другом контейнере, у которого в свою очередь значение свойства `position` не равно `static`, то элемент позиционируется относительно границ контейнера:
+
+### Относительное позиционирование
+
+Относительное позиционирование также задается с помощью значения `relative`. Для указания конкретной позиции, на которую сдвигается элемент, применяются те же свойства `top`, `left`, `right`, `bottom`:
+
+### Свойство `z-index`
+
+По умолчанию при совпадении у двух элементов границ, поверх другого отображается тот элемент, который определен в разметке html последним. Однако свойство `z-index` позволяет изменить порядок следования элементов при их наложении. В качестве значения свойство принимает число. Элементы с большим значением этого свойства будут отображаться поверх элементов с меньшим значением `z-index`.
+
+### Фиксированное позиционирование
+
+Фиксированное позиционирование является распространенным способом удержать в области просмотра браузера некоторые элементы.
+
+Для фиксированного позиционирования у элементов нужно установить значение `fixed` для свойства `position`. После этого с помощью стандартных свойств `left`, `right`, `top` и `bottom` можно определить конкретную позицию фиксированного элемента.
+
+Чтобы растянуть фиксированный блок от левой до правой границы страницы, устанавливаются три свойства:
+
+```css
+top: 0;
+left: 0;
+right: 0;
+```
+
+Для нижележащего блока с основным содержанием фиксированный элемент фактически не существует разметке, так как блок с фиксированным, как и с абсолютным  позиционированием не учавствуют в стандартном потоке html. Поэтому по умолчанию оба блока будут накладываться друг на друга и размещатьс в одной точке. И нам надо должным образом разместить блок содержимого относительно фиксированного блока, например, установив нужный отступ:
+
+```css
+margin-top: 50px;
+```
+Фактически отступ идет от границ области просмотра браузера, поэтому высота отступа должна быть больше высоты фиксированного элемента.
+
+## Трансформации
+
+Для создания трансформаций в CSS3 применяется свойство `transform`:
+
+|transform:|результат|
+|-|-|
+|rotate(угол_поворота deg)|поворот на угол в градусах|
+|scale(величина_масштабирования)|масштабирование элемента|
+|scale(по_горизонтали по_вертикали)|масштабирование элемента по осям|
+|scaleX(величина_масштабирования)|по горизонтали|
+|scaleY(величина_масштабирования)|по вертикали|
+|translate(offset_X, offset_Y)|перемещение элемента|
+|translateX(offset_X)|перемещение элемента по горизонтали|
+|translateY(offset_Y)|перемещение элемента по вертикали|
+|skew(X, Y)|наклон элемента в градусах для каждой оси|
+
+### Комбинирование преобразований
+
+```css
+transform: translate(50px, 100px) skew(30deg, 10deg) scale(1.5) rotate(90deg);
+```
+
+### Исходная точка трансформации
+
+По умолчанию при применении трансформаций браузер в качестве точки начала преобразования использует центр элемента. Но с помощью свойства `transform-origin` можно изменить исходную точку.
+
+|transform-origin:|результат|
+|-|-|
+|left top|левый верхний угол элемента|
+|left bottom|левый нижний угол элемента|
+|right top|правый верхний угол элемента|
+|right bottom|правый нижний угол элемента|
+
