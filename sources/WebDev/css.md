@@ -58,8 +58,8 @@
 
 - [Flexible Box Layout](./css-content/flexbox-layaout.md)
 
-- [Макет страницы на Flexbox](./css-content/flexbox-maket.md)
+- [Макет страницы на Flexbox](./css-content/flexbox-markup.md)
 
 - [Grid Layout](./css-content/grid-layout.md)
 
-- [Макет страницы в Grid Layout]()
+- [Макет страницы в Grid Layout](./css-content/grid-markup.md)
