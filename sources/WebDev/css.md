@@ -63,3 +63,9 @@
 - [Grid Layout](./css-content/grid-layout.md)
 
 - [Макет страницы в Grid Layout](./css-content/grid-markup.md)
+
+- [Custom properties. Переменные в CSS](./css-content/custom-properties.md)
+
+- [Создание тем CSS с помощью переменных](./css-content/theme.md)
+
+- [Стили CSS как хранилище данных](./css-content/css-database.md)
