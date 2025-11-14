@@ -50,6 +50,8 @@
 
 [Python](./sources/Python/README.md)
 
+[JavaScript](./sources/JavaScript/README.md)
+
 [Frontend разработка](./sources/WebDev/README.md)
 
 ---
