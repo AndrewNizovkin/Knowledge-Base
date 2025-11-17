@@ -2,6 +2,8 @@
 
 [Методичка](https://gbcdn.mrgcdn.ru/uploads/asset/5580418/attachment/5eec307a6443d172481c51cc9e567d8f.pdf)
 
+[Многопоточность без боли: шпаргалка для собесов в Java](https://habr.com/ru/articles/966892/)
+
 ---
 
 ### Введение
