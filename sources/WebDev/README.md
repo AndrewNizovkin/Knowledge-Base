@@ -4,7 +4,7 @@
 
 [CSS](./css.md)
 
-[JS](js.md)
+[JS](../JavaScript/README.md)
 
 [Bootstrap](./bootstrap.md)
 
