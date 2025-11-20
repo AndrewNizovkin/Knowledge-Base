@@ -41,6 +41,8 @@
 
 ## Статьи, видео.
 
+[Spring без боли: шпаргалка для собесов в Java.](https://habr.com/ru/articles/967632/)
+
 [Simple Spring (полный фарш)](https://habr.com/ru/articles/872776/)
 
 [Kafka. Лучшие практики](https://habr.com/ru/articles/853652/)
