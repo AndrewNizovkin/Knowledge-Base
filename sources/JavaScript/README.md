@@ -20,6 +20,8 @@
 
 [Браузерные события и их обработка](./js-events.md)
 
+[Промисы](./js-promise.md)
+
 [Работа с формами](js-forms.md)
 
 [Вызов REST API из JavaScript](https://sky.pro/media/vyzov-rest-api-iz-javascript/)
