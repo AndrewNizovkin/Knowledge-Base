@@ -10,8 +10,6 @@
 
 [Функции](./js-function.md)
 
-[Fetch API](./js-fetch-api.md)
-
 [Объекты, примеси, прототипное наследование](./js-objects.md)
 
 [DOM](./js-dom.md)
@@ -20,7 +18,11 @@
 
 [Браузерные события и их обработка](./js-events.md)
 
+[Колбэки](./js-callback.md)
+
 [Промисы](./js-promise.md)
+
+[Fetch API](./js-fetch-api.md)
 
 [Работа с формами](js-forms.md)
 
