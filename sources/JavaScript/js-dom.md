@@ -138,6 +138,44 @@ alert( Array.from(document.body.childNodes).filter ); // сделали масс
 ```
 *В реальной жизни лучше использовать document.getElementById.*
 
+### HTML-атрибуты
+
+Когда у элемента есть `id` или другой стандартный атрибут, создаётся соответствующее свойство. Но этого не происходит, если атрибут нестандартный.
+
+```html
+<body id="test" something="non-standard">
+  <script>
+    alert(document.body.id); // test
+    // нестандартный атрибут не преобразуется в свойство
+    alert(document.body.something); // undefined
+  </script>
+</body>
+```
+
+Кроме того, все атрибуты доступны с помощью следующих методов:
+
+- `elem.hasAttribute(name)` – проверяет наличие атрибута.
+
+- `elem.getAttribute(name)` – получает значение атрибута.
+
+- `elem.setAttribute(name, value)` – устанавливает значение атрибута.
+
+- `elem.removeAttribute(name)` – удаляет атрибут.
+
+Иногда нестандартные атрибуты используются для передачи пользовательских данных из HTML в JavaScript, или чтобы «помечать» HTML-элементы для JavaScript.
+
+Чтобы избежать конфликтов, существуют атрибуты вида `data-*`.
+
+Все атрибуты, начинающиеся с префикса «data-», зарезервированы для использования программистами. Они доступны в свойстве `dataset`.
+
+```html
+<body data-about="Elephants">
+<script>
+  alert(document.body.dataset.about); // Elephants
+</script>
+```
+Атрибуты, состоящие из нескольких слов, к примеру `data-order-state`, становятся свойствами, записанными с помощью верблюжьей нотации: `dataset.orderState`.
+
 ### Поиск: querySelectorAll
 
 Самый универсальный метод поиска – это `elem.querySelectorAll(css)`, он возвращает все элементы внутри elem, удовлетворяющие данному CSS-селектору.
