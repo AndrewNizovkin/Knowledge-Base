@@ -69,6 +69,10 @@
 
 [Spring Security / Хабр](https://habr.com/ru/articles/927788/)
 
+[Spring Security: работа с JWT токенами](https://habr.com/ru/articles/1059086/)
+
+[Spring Security: начало работы и первые шаги на практике](https://habr.com/ru/articles/1055508/)
+
 ---
 
 ## Семинары Андрея Голикова
