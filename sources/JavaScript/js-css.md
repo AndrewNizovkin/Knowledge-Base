@@ -85,11 +85,11 @@ elem.style.cssText += `
 
 Методы classList:
 
-- `elem.classList.add/remove("class")` – добавить/удалить класс.
-
-- `elem.classList.toggle("class")` – добавить класс, если его нет, иначе удалить.
-
-- `elem.classList.contains("class")` – проверка наличия класса, возвращает true/false.
+|метод|назначение|
+|-|-|
+|elem.classList.add/remove("class")|добавить/удалить класс|
+|elem.classList.toggle("class")|добавить класс, если его нет, иначе удалить|
+|elem.classList.contains("class")|проверка наличия класса, возвращает true/false|
 
 Кроме того, `classList` является перебираемым, поэтому можно перечислить все классы при помощи `for..of`:
 

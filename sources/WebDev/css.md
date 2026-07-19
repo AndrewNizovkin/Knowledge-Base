@@ -1,60 +1,71 @@
-# SCC Каскадные таблицы стилей
+# CSS Каскадные таблицы стилей
 
+- [Селекторы, спрособы задания стилей для элементов HTML-документа](./css-content/selector.md)
 
-[Селекторы CSS](https://html5css.ru/cssref/css_selectors.php)
+- [Псевдоклассы](./css-content/pseudo-class.md)
 
-[Свойства CSS](https://html5css.ru/cssref/default.php)
+- [Псевдоэлементы](./css-content/pseudo-element.md)
 
----
+- [Селекторы атрибутов](./css-content/atribut-selector.md)
 
-Стили для элементов HTML-документа могут быть заданы различным способом:
+- [Стилизация текста](./css-content/text-style.md)
 
-- <span style="color:yellow;"><b>Встроенные</b></span>. Для любого элемента в начальном теге:
+- [Стилизация списков](./css-content/list-style.md)
 
-```html
-<p style="background-color:lightblue;color:white;text-align:center;">Hello World</p>
+- [Стилизация таблиц](./css-content/table-style.md)
 
-```
+- [Стилизация элемента `details`](./css-content/details-style.md)
 
-- <span style="color:yellow;"><b>Внутренние</b></span>. Для каждой страницы в разделе <head> в секции <style></style>
+- [Цвет в CSS](./css-content/color.md)
 
-```html
-<head>
-    <style>
-        p {
-            background-color: lightblue;
-            color: white;
-            text-align: center;
-        }
-    </style>
-</head>
+- [Блочная модель](./css-content/block-model.md)
 
-```
+- [Размеры элементов](./css-content/element-size.md)
 
-- <span style="color:yellow;"><b>Внешние</b></span>. Стили описываются в файлах *.css, которые подключаются в теле заголовка в теге <link>
+- [Стилизация фоновых изображений](./css-content/background-style.md)
 
-```html
-<head>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-```
+- [Создание тени у элемента](./css-content/shadow.md)
 
-Если некоторые свойства были определены для одного и того же селектора (элемента) в разных таблицах стилей, будет использовано значение из последней таблицы стилей чтения.
+- [Контуры элемента](./css-content/outline.md)
 
-CSS-файл это текстовый файл, в котором для каждого селектора определяется массив `свойство: значение`
+- [Обтекание элемента](./css-content/float.md)
 
-```css
-h1 {
-    color: blue;
-    font-family: verdana;
-    font-size: 300%;
-}
-p  {
-    color: red;
-    font-family: courier;
-    font-size: 160%;
-}
-```
+- [Прокрутка элемента](./css-content/scroll.md)
 
----
+- [Линейный и радиальныйградиенты](./css-content/gradient.md)
 
+- Создание макета страницы и блочная верстка
+
+    - [Блочная вёрстка](./css-content/block-layout.md)
+
+    - [Свойство `display`](./css-content/display.md)
+
+    - [Создание панели навигации, меню](./css-content/menu.md)
+
+    - [Выравнивание плавающих элементов](./css-content/align.md)
+
+    - [Создание простейшего макета](./css-content/block-maket.md)
+
+- [Позиционирование](./css-content/position.md)
+
+- [Трансформации](./css-content/transform.md)
+
+- [Переходы](./css-content/transition.md)
+
+- [Анимация](./css-content/animation.md)
+
+- [Адаптивный дизайн](./css-content/adaptive-design.md)
+
+- [Flexible Box Layout](./css-content/flexbox-layaout.md)
+
+- [Макет страницы на Flexbox](./css-content/flexbox-markup.md)
+
+- [Grid Layout](./css-content/grid-layout.md)
+
+- [Макет страницы в Grid Layout](./css-content/grid-markup.md)
+
+- [Custom properties. Переменные в CSS](./css-content/custom-properties.md)
+
+- [Создание тем CSS с помощью переменных](./css-content/theme.md)
+
+- [Стили CSS как хранилище данных](./css-content/css-database.md)

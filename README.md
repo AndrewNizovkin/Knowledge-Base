@@ -18,6 +18,8 @@
 
 [Linux](./sources/Linux/README.md)
 
+[Astra Linux](./sources/AstraLinux/README.md)
+
 [macOs](./sources/MacOs/README.md)
 
 [Networks](./sources/Networks/README.md)
@@ -47,6 +49,8 @@
 [Android](./sources/Android/README.md)
 
 [Python](./sources/Python/README.md)
+
+[JavaScript](./sources/JavaScript/README.md)
 
 [Frontend разработка](./sources/WebDev/README.md)
 

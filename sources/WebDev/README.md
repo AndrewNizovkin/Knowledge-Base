@@ -1,8 +1,10 @@
 # Web разработка
 
+[HTML](./html.md)
+
 [CSS](./css.md)
 
-[JS](js.md)
+[JS](../JavaScript/README.md)
 
 [Bootstrap](./bootstrap.md)
 
@@ -25,6 +27,8 @@
 [Путь фронтендера](https://habr.com/ru/articles/815057/)
 
 [Курс Java Script](https://learn.javascript.ru/)
+
+[Что происходит внутри Angular и React при решении одних и тех же задач](https://habr.com/ru/companies/selectel/articles/965586/)
 
 [Проектирование микросервисной архитектуры в среде NodeJS/NestJS](https://habr.com/ru/articles/841204/)
 
