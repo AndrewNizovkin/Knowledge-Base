@@ -73,6 +73,8 @@
 
 [Spring Security: начало работы и первые шаги на практике](https://habr.com/ru/articles/1055508/)
 
+[Новая книга по Spring Security. Насколько это актуально сегодня?](https://habr.com/ru/companies/spring_aio/articles/1107158/)
+
 ---
 
 ## Семинары Андрея Голикова
