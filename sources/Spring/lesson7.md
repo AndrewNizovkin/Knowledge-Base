@@ -214,6 +214,62 @@ Security предоставляет дополнительные заголов�
 защиты сессий, включая защиту от фиксации сессии и механизмы для
 автоматического выхода из системы.
 
+## Обработка HTTP-запроса 
+
+Внутренняя обработка запроса в Spring Security строится на цепочке сервлет-фильтров, которые перехватывают каждый входящий HTTP-запрос ещё до того, как он попадёт в DispatcherServlet и ваши контроллеры.
+Ниже — пошаговый разбор архитектуры и жизненного цикла одного HTTP-запроса внутри этой системы.
+
+1. Схема прохождения запроса (Архитектура моста)
+
+Поскольку контейнер сервлетов (Tomcat) не знает о контексте Spring, взаимодействие происходит через три уровня:
+1. Контейнер сервлетов (Tomcat): Принимает запрос и запускает стандартную цепочку FilterChain (кодировка, CORS и т.д.).
+2. DelegatingFilterProxy: Обычный сервлет-фильтр, зарегистрированный в контейнере под именем springSecurityFilterChain. Он ничего не проверяет сам, а находит в ApplicationContext бин FilterChainProxy и передаёт запрос ему.
+3. FilterChainProxy (ядро Spring Security): Специальный бин, который содержит внутри себя одну или несколько цепочек SecurityFilterChain.
+	• Он проверяет URL запроса (например, /api/** или /admin/**) и выбирает первую подходящую SecurityFilterChain (соответствующую вашему бину @Bean public SecurityFilterChain filterChain(HttpSecurity http)).
+	• По очереди прогоняет запрос через все внутренние фильтры безопасности выбранной цепочки.
+
+2. Порядок ключевых фильтров внутри SecurityFilterChain
+
+Внутри SecurityFilterChain фильтры всегда выстроены в строгом порядке. В стандартной конфигурации веб-приложения запрос проходит через следующие основные этапы:
+1. SecurityContextHolderFilter (ранее SecurityContextPersistenceFilter):
+	• Читает данные о текущем пользователе из хранилища (например, из HttpSession) и помещает объект SecurityContext (с объектом Authentication) в SecurityContextHolder (обычно привязанный к текущему потоку через ThreadLocal).
+	• На обратном пути (после выполнения контроллера) сохраняет изменения контекста и очищает ThreadLocal, чтобы данные не утекли в другой запрос.
+2. HeaderWriterFilter:
+	• Добавляет в HTTP-ответ защитные заголовки (X-Frame-Options, X-Content-Type-Options, Cache-Control и др.).
+3. CsrfFilter:
+	• Для небезопасных методов (POST, PUT, DELETE) проверяет наличие и валидность CSRF-токена (если защита не отключена через .csrf(AbstractHttpConfigurer::disable)).
+4. LogoutFilter:
+	• Проверяет, не является ли запрос выходом из системы (по умолчанию POST /logout). Если да — завершает сессию, очищает SecurityContextHolder и делает редирект.
+5. Фильтры аутентификации (срабатывают только при попытке входа или наличии токена):
+	• UsernamePasswordAuthenticationFilter — перехватывает отправку формы логина (POST /login), извлекает логин/пароль и запускает процесс аутентификации.
+	• BasicAuthenticationFilter — проверяет заголовок Authorization: Basic ....
+	• Кастомные фильтры (например, JwtAuthenticationFilter) — обычно встраиваются именно на этом уровне (addFilterBefore), чтобы проверить JWT-токен и заполнить SecurityContextHolder.
+6. AnonymousAuthenticationFilter:
+	• Если ни один из предыдущих фильтров не установил пользователя в SecurityContextHolder, этот фильтр создаёт специальный объект AnonymousAuthenticationToken (с ролью ROLE_ANONYMOUS), чтобы в системе никогда не было null вместо объекта аутентификации.
+7. ExceptionTranslationFilter (критически важный перехватчик):
+	• Оборачивает вызов следующих фильтров в блок try-catch и перехватывает два типа исключений:
+		• AuthenticationException (пользователь не вошёл в систему) → вызывает AuthenticationEntryPoint (редиректит на страницу /login или возвращает статус 401 Unauthorized).
+		• AccessDeniedException (пользователь вошёл, но не хватает прав) → вызывает AccessDeniedHandler (возвращает ошибку 403 Forbidden).
+8. AuthorizationFilter (ранее FilterSecurityInterceptor):
+	• Последний фильтр в цепочке. Берёт текущего пользователя из SecurityContextHolder, сверяет его роли/права (Authorities) с правилами из конфигурации (requestMatchers("/admin/**").hasRole("ADMIN")) и решает:
+		• Разрешить: передаёт управление дальше в DispatcherServlet → контроллер.
+		• Запретить: выбрасывает AccessDeniedException, который тут же ловит ExceptionTranslationFilter (пункт 7).
+
+3. Как работает сам процесс аутентификации (когда пользователь логинится)
+
+Когда срабатывает фильтр аутентификации (например, UsernamePasswordAuthenticationFilter), внутри запускается отдельная цепочка компонентов:
+1. Фильтр создаёт неаутентифицированный объект UsernamePasswordAuthenticationToken (только логин и пароль) и передаёт его в AuthenticationManager (стандартная реализация — ProviderManager).
+2. ProviderManager перебирает зарегистрированные AuthenticationProvider (например, DaoAuthenticationProvider).
+3. DaoAuthenticationProvider:
+	• Вызывает ваш сервис UserDetailsService.loadUserByUsername(username), чтобы загрузить пользователя и его хеш пароля из БД.
+	• Сверяет введённый пароль с хешем через PasswordEncoder (например, BCryptPasswordEncoder).
+4. При успехе возвращается заполненный объект Authentication (с флагом authenticated = true и списком прав GrantedAuthority), который фильтр сохраняет в SecurityContextHolder.
+Какой аспект работы цепочки вам интереснее разобрать дальше:
+• Как правильно встроить кастомный фильтр (например, для JWT-аутентификации) через addFilterBefore / addFilterAfter
+• Как настроить несколько независимых SecurityFilterChain (например, одну для REST API с JWT, другую — для админки с формой логина и сессиями)
+• Как работает обработка ошибок 401 и 403 (AuthenticationEntryPoint и AccessDeniedHandler)
+
+
 ## Практика
 
 Подключаем в spring.initializir `Spring Security`
